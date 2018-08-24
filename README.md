@@ -1,7 +1,7 @@
 # leetcode
 关于leetcode的感兴趣的题目解答，in python
 
-文件名即为题号，相关题目描述可以到<https://leetcode-cn.com/problemset/all/>利用题号搜索搜索
+文件名即为题号，相关题目描述可以到<https://leetcode-cn.com/problemset/all/>利用题号搜索
 
 ### 目的：
 1. 保持对于基本算法的熟悉度
