@@ -1,11 +1,11 @@
-#递归解法
-
 # Definition for a binary tree node.
 # class TreeNode(object):
 #     def __init__(self, x):
 #         self.val = x
 #         self.left = None
 #         self.right = None
+
+#递归解法
 
 class Solution(object):
     def isSymmetricEqualTree(self, root1, root2):
@@ -35,6 +35,44 @@ class Solution(object):
 #################################################################################
 
 # 迭代解法
+class Solution(object):    
+    def isSymmetric(self, root):
+        if root is None:
+            return True
+        if not root.left and not root.right:
+            return True
+        
+        left_v_list = [root.left]
+        right_v_list = [root.right]
+        idx = -1
+        
+        while True:
+            if len(left_v_list)!=len(right_v_list):
+                return False
+            
+            idx += 1
+            if idx > (len(left_v_list) - 1):
+                break
+                
+            left_v = left_v_list[idx]
+            right_v = right_v_list[idx]
+            
+            if left_v is not None:
+                left_v_list.append(left_v.left)
+                left_v_list.append(left_v.right)
+            
+            if right_v is not None:
+                right_v_list.append(right_v.right)
+                right_v_list.append(right_v.left)
+                    
+            if type(left_v)==TreeNode and type(right_v)==TreeNode and left_v.val!=right_v.val:
+                return False
+            if left_v is None and right_v is not None:
+                return False
+            if left_v is not None and right_v is None:
+                return False
+            
+        return True
 
 
 
