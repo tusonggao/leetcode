@@ -26,3 +26,19 @@ class Solution(object):
 				
 				
 #使用O(1)空间的解法1
+
+class Solution(object):
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        result = 0
+        for i in range(32):
+            count = 0
+            for j in nums:
+                count += (j>>i) & 1
+            count %= 3
+            result |= count<<i
+        return int(result)
+        
