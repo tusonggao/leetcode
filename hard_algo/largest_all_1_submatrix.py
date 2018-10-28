@@ -18,4 +18,6 @@
 #
 # https://blog.csdn.net/say_c_box/article/details/52014572
 
+# http://poj.org/problem?id=3494
+
 
