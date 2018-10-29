@@ -3,14 +3,12 @@ class Solution:
         """
         :type s: str
         :rtype: str
-        """
-        if len(s)<=1:
-            return s
-        
+        """        
         i_start = 0     # 最长回文串起始位置
-        max_len = 0  # 最长回文串长度
+        max_len = 0     # 最长回文串长度
         
-        # 思路：按照最后一个字符位置进行遍历完整字符串，
+        # 思路：
+		# i作为回文字符的最后一个字符位置，完整遍历整个字符串s
         # max_len一定会从1开始变大到最大可以取到的值
 
         for i in range(len(s)): # i 代表最长字符串最后一个字符的位置
