@@ -63,19 +63,19 @@ class Solution:
         """
         from collections import deque
         
-        nodes_queue = deque()
+        nodes_que = deque()
         outcome = []
         if root:
-            nodes_queue.append((root.val, 0))
-        while len(nodes_queque)>0:
-            val, level_num = nodes_que.popleft()
+            nodes_que.append((root, 0))
+        while len(nodes_que)>0:
+            node, level_num = nodes_que.popleft()
             if len(outcome)<=level_num:
                 outcome.append([])
-            outcome[level_num].append(val)
-            if root.left:
-                nodes_queue.append((root.left, level_num+1))
-            if root.right:
-                nodes_queue.append((root.right, level_num+1))     
+            outcome[level_num].append(node.val)
+            if node.left:
+                nodes_que.append((node.left, level_num+1))
+            if node.right:
+                nodes_que.append((node.right, level_num+1))
         return outcome
             
             
