@@ -56,29 +56,27 @@ class Solution:
 #层序遍历二叉树
 
 class Solution:
-    from collections import deque
-    def __init__(self):
-        self.nodeque = deque()
-        self.levelnodes = list()
-    
-    def levelGetNode(self, root, level_num):
-        if root is None:
-            return
-        else:
-            self.nodeque.append((root.val, level_num))
-            while self.nodeque:
-                self.nodeque.popleft(root)
-                self.levelnodes.append((root.val, level_num))
-                self.nodeque.append((root.val, level_num))
-                self.nodeque.append((root.val, level_num))
-        
     def levelOrder(self, root):
-        
         """
         :type root: TreeNode
         :rtype: List[List[int]]
         """
-        self.levelGetNodes(root, 0)
+        from collections import deque
+        
+        nodes_queue = deque()
+        outcome = []
+        if root:
+            nodes_queue.append((root.val, 0))
+        while len(nodes_queque)>0:
+            val, level_num = nodes_que.popleft()
+            if len(outcome)<=level_num:
+                outcome.append([])
+            outcome[level_num].append(val)
+            if root.left:
+                nodes_queue.append((root.left, level_num+1))
+            if root.right:
+                nodes_queue.append((root.right, level_num+1))     
+        return outcome
             
             
         
