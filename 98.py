@@ -61,5 +61,35 @@ class Solution:
                 
 ################################################################################################
 
-# 递归版本解答
+# 迭代版本解答
+
+class Solution:        
+    def isValidBST(self, root):
+        """
+        :type root: TreeNode
+        :rtype: bool
+        """
+        if root==None:
+            return True
+        
+        stack = [root]
+        val_last = -float('inf')
+        
+        while len(stack)>0:
+            last_ele = stack.pop()
+            if type(last_ele)==TreeNode:
+                if last_ele.right:
+                    stack.append(last_ele.right)
+                stack.append(last_ele.val)
+                if last_ele.left:
+                    stack.append(last_ele.left)
+            else:
+                if val_last >= last_ele:
+                    return False
+                else:
+                    val_last = last_ele
+        
+        return True
+
+
 
