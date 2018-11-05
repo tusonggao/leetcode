@@ -5,6 +5,15 @@
 #         self.left = None
 #         self.right = None
 
+#    3
+#   / \
+#  9  20
+#    /  \
+#   15   7
+
+# 根据层序遍历的方式构建二叉树 如上图可见
+
+
 #前序遍历二叉树
 
 class Solution:
