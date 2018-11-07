@@ -1,3 +1,5 @@
+#解法一
+
 class Solution:
     def maxProfit(self, prices):
         """
@@ -12,10 +14,12 @@ class Solution:
         return ans
 		
 		
+####################################################################################
+
 		
+#解法二		
 		
-		
-		class Solution:
+class Solution:
     def maxProfit(self, prices):
         """
         :type prices: List[int]
