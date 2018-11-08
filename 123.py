@@ -1,3 +1,6 @@
+######################################################################################
+#自己花很多时间得到的解法
+
 class Solution:
     def compute_head_profit(self, prices):
         max_profit = 0
@@ -37,3 +40,19 @@ class Solution:
             max_profit = max(max_profit, self.head_profit[i]+self.tail_profit[i])
         
         return max_profit
+		
+		
+		
+######################################################################################
+#看到的时间效率很高的解法，目前还没有看懂。。。
+
+class Solution:
+    def maxProfit(self, prices):
+        a1,a2=-10000,-10000
+        b1,b2=0,0
+        for o in prices:
+            if a1<-o:a1=-o
+            if b1<o+a1:b1=o+a1
+            if a2<b1-o: a2=b1-o
+            if b2<a2+o:b2=a2+o
+        return b2
