@@ -1,4 +1,4 @@
-#解法一： 不使用正则表达式匹配的方法 
+#解法一： 不使用正则表达式匹配的方法
 class Solution:
     def myAtoi(self, str):
         """
@@ -39,4 +39,40 @@ class Solution:
             else:
                 return -num
             
+			
+			
+#解法二： 使用正则表达式匹配的方法
+
+class Solution:
+    def myAtoi(self, str):
+        """
+        :type str: str
+        :rtype: int
+        """
+        import re
+        #outcome_match = re.match(r'^\s*([+|-]{0,1}\d+)[^0-9]{0,1}.*$', str)
+        #num_str = outcome_match.group(1)
+        outcome_match = re.match(r'^\s*[+-]?\d+', str)
+        
+        if not outcome_match:
+            return 0
+        
+        num = int(outcome_match.group(0))
+        
+        if num>2**31-1:
+            num = 2**31-1
+        elif num<-2**31:
+            num = -2**31
+        
+        return num
+
+        
+        
+        
+        
+        
+
+
+
+
         
