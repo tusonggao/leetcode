@@ -18,3 +18,5 @@ https://leetcode-cn.com/explore/learn/card/data-structure-binary-tree/
 
 2018腾讯秋招50题
 https://leetcode-cn.com/problemset/2018-50/
+
+https://leetcode-cn.com/explore/interview/card/bytedance/
